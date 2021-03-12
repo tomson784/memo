@@ -8,3 +8,5 @@
 [vscodeでMarkdown](articles/markdown.md)  
 [rosでcatkinコマンド](articles/ros_catkin.md)  
 [GitHub Actionsの使い方](articles/github_actions.md)  
+[vscodeの標準・拡張機能のメモ](articles/vscode.md)  
+[WSL](articles/wsl.md)  
