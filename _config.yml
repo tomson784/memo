@@ -1,3 +1,6 @@
+# baseurl: "/memo" # the subpath of your site, e.g. /newpath-for-emping
+# url: "https://tomson784.github.io" # the base hostname & protocol for your site
+
 theme: jekyll-theme-cayman
 
 gems:
