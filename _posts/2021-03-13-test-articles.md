@@ -1,6 +1,6 @@
 ---
-layout: post
-title:  "論文タイトル"
+layout: default
+title:  "テスト"
 date:   2021-03-13
 categories: Test
 ---
