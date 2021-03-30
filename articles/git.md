@@ -1,3 +1,10 @@
+---
+layout: default
+title:  "Gitの初歩"
+date:   2021-03-20
+categories: git
+---
+
 # gitの使い方メモ
 
 gitはソフトウェアのバージョン管理ソフトである．  

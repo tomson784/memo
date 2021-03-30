@@ -1,3 +1,10 @@
+---
+layout: default
+title:  "vscodeの標準・拡張機能のメモ"
+date:   2021-03-18
+categories: vscode
+---
+
 # vscodeの使い方
 
 vscodeの標準・拡張機能のメモ

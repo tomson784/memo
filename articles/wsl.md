@@ -1,3 +1,10 @@
+---
+layout: default
+title:  "WSLのインストール"
+date:   2021-03-18
+categories: wsl
+---
+
 # wslの使い方
 
 - Windowsの機能

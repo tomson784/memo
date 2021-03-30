@@ -1,3 +1,10 @@
+---
+layout: default
+title:  "3DLidar(VLP16)のセットアップ"
+date:   2021-03-18
+categories: ros
+---
+
 # velodyne VLP16 のセットアップ
 
 ## 環境

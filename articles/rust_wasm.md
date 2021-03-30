@@ -1,3 +1,10 @@
+---
+layout: default
+title:  "rustのwasmテンプレート"
+date:   2021-03-18
+categories: rust wasm
+---
+
 # RustでWebAssembly
 
 ## プロジェクトの構築手順
