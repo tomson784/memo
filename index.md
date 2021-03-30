@@ -8,6 +8,11 @@
 - [{{ post.title }}]({{ post.url | prepend: site.baseurl }})
 {% endfor %}
 
+## カテゴリ
+{% for category in post.categories %}
+- {{ category }}
+{% endfor %}
+
 ### メモリスト
 
 [Gitの初歩](articles/git.md)  
