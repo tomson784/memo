@@ -1,9 +1,10 @@
 ---
 layout: default
 title:  "GitHub Actionsの使い方"
-date:   2021-03-18
+date:   2021-03-19
 categories: git
 ---
+
 # github actions をローカルで使う
 
 [act](https://github.com/nektos/act)によってローカルでGithub Actions
