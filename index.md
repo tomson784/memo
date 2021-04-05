@@ -4,19 +4,15 @@
 
 ## Latest posts
 
-{% for post in site.posts limit: 10 %}
+{% for post in site.posts limit: 3 %}
 - [{{ post.title }}]({{ post.url | prepend: site.baseurl }})
 {% endfor %}
 
 ## カテゴリ
 {% for category in site.categories %}
-- {{ category[0] }}
+### {{ category[0] }}
+{% for post in category[1] %}
+- [{{ post.title }}]({{ post.url | prepend: site.baseurl }})
+{% endfor %}
 {% endfor %}
 
-### メモリスト
-
-[vscodeでMarkdown](articles/markdown.md)  
-[rosでcatkinコマンド](articles/ros_catkin.md)  
-[vscodeの標準・拡張機能のメモ](articles/vscode.md)  
-[WSL](articles/wsl.md)  
-[3DLidar(VLP16)のセットアップ](articles/velodyne_VLP16_setup_memo.md)  
