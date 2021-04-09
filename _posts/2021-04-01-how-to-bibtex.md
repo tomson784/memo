@@ -10,6 +10,20 @@ categories: tex
 引用文献のデータベース化（SQL的なやつではない）  
 tex内の引用文献の表示・非表示と順番を勝手に配置してくれる
 
+Bibtexはこんな感じに記述されているファイル↓
+```bibtex
+@INPROCEEDINGS{7405113,
+  author={T. {Hoshi} and T. {Takei}},
+  booktitle={2015 IEEE/SICE International Symposium on System Integration (SII)}, 
+  title={Simultaneous determination of optimized one unloading point and plural scooping points for wheel loader}, 
+  year={2015},
+  volume={},
+  number={},
+  pages={865-870},
+  doi={10.1109/SII.2015.7405113}
+}
+```
+
 ## texliveなどの場合の例
 
 出力された`****.aux`ファイルに対して以下のコマンドで
