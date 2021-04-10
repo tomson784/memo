@@ -11,14 +11,63 @@ rosでは複数のセンシングデータを扱う．
 大量のデータを扱うので，スムーズに参照する必要がある．  
 そのためのツール群の使い方に関するメモ．
 
+## rosdep
+
+rosプロジェクトの依存パッケージを自動でインストール．  
+たぶん`package.xml`に従ってインストールを行う（あとで調べる）．
+
+```
+rosdep install -i --from-paths <path-to-ros-package>
+```
+
 ## rosbag record
 
 rostopicのデータを同時系列で保存する．
+以下のコマンドで全トピックの保存．
+```
+rosbag record -a
+```
 
+指定したトピックだけを保存
+```
+rosbag record /topic1 /topic2
+```
 
+正規表現でトピックを指定
+```
+rosbag record -e topic
+```
+
+rosbagデータをファイル名を指定して保存
+```
+rosbag record -O <file.bag>
+```
+
+rosbagデータをcsv形式で保存するためののシェルスクリプト（ただし，画像データなどはどうなるかわからない．それに気をつけてトピックを指定して保存）  
+`$1`は引数を表す．
+```bash
+#!/bin/bash
+rostopic echo -b $1.bag -p /sensing_value > $1.csv
+```
 
 ## rosbag play
 
+rosbagデータを再生する．主に再生した状態でrvizなどで観察する．
+```
+rosbag play <bagfile.bag> 
+```
+
+n倍速でrosbagを再生する．
+```
+rosbag play <bagfile.bag> -r <speed> --clock
+```
+
+## rqt_bag
+
+GUIでrosbagデータを開く．特定の時間を指定して観察したいときなど．
+```
+rqt_bag <bagfile.bag>
+```
 
 ## rviz
 
@@ -32,3 +81,7 @@ rvizを開いたあと
 
 `Fixed Frame`を始めに設定する必要がある．
 使い方の詳細はまだわからない
+
+## 参考
+- [ROS講座29 rosbagを使う](https://qiita.com/srs/items/f6e2c36996e34bcc4d73)
+- [データの記録と再生](http://wiki.ros.org/ja/rosbag/Tutorials/Recording%20and%20playing%20back%20data)
