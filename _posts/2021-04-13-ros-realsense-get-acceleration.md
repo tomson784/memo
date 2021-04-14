@@ -23,6 +23,7 @@ rosでrealsenseが使える状態になっている．
 起動方法は`roslaunch realsense2_camera demo_pointcloud.launch`  
 (ただし，`<arg name="enable_accel" value="false"/>`を`<arg name="enable_accel" value="true"/>`に変更)
 2. 起動したあとに，こんな感じのスクリプトを実行する（あくまでも一例）
+
 ```python
 #!/usr/bin/env python
 import rospy
@@ -50,6 +51,7 @@ def listener():
 if __name__ == '__main__':
     listener()
 ```
+
 取得したimuの個別の値を抽出する方法は`realsense2_camera/scripts/rs2_listener.py`の`callback(self, data)`を見るとなんとなくわかる．
 
 
