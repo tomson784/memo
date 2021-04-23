@@ -82,6 +82,14 @@ rvizを開いたあと
 `Fixed Frame`を始めに設定する必要がある．
 使い方の詳細はまだわからない
 
+点群を扱うセンサの場合に`Fixed Frame`を指定されている．  
+以下のコマンドで配列を除いたtopic情報が表示されるので，ヘッダー情報が見やすくなる．
+
+```
+rostopic echo --noarr <topic name>
+```
+
 ## 参考
 - [ROS講座29 rosbagを使う](https://qiita.com/srs/items/f6e2c36996e34bcc4d73)
 - [データの記録と再生](http://wiki.ros.org/ja/rosbag/Tutorials/Recording%20and%20playing%20back%20data)
+- [ROSのTips（初心者向け）](https://qiita.com/yukkysaito/items/e2f714c254bf7799677e)
