@@ -47,14 +47,17 @@ $pdf_mode = 3;
 
 コンパイラをLatexにする
 
+## その他
+
 引用文献として以下ような感じで書く
 
 ```
-\bibliographystyle{jplain} # jplainの意味はわからない
-\bibliography{sample}      # sampleはsample.bibを指す
-
+\bibliographystyle{jplain} % plain,jplain:アルファベット順．unsrt,junsrt:引用順
+\bibliography{sample}      % sampleはsample.bibを指す
 ```
 ## 参考
 
-http://mikilab.doshisha.ac.jp/dia/seminar/latex/doc/bib.html  
-https://qiita.com/fujino-fpu/items/d92d185da730e25743cb  
+- http://mikilab.doshisha.ac.jp/dia/seminar/latex/doc/bib.html  
+- https://qiita.com/fujino-fpu/items/d92d185da730e25743cb  
+- [BiBTeXとは](https://qiita.com/SUZUKI_Masaya/items/14f9727845e020f8e7e9)
+
