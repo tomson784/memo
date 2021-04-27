@@ -89,6 +89,22 @@ rvizを開いたあと
 rostopic echo --noarr <topic name>
 ```
 
+### ROSのネットワーク接続
+
+- 端末を同じネットワーク（ローカルネットワーク）で接続（VPNを使えば外部ネットワークとの接続も可能）
+- `roscore`起動時のポートは標準で11311となっている
+
+```
+ROS_MASTER_URI=http://<ros_master_ip_address>:11311
+ROS_MASTER=http://<this_pc_ip_address>
+```
+
+- 一見つながっているように見えても，データが取得できないときがある．
+- 自分のPCに相手のPC（逆もしかり）を正しく認識させる必要がある．
+- `/etc/hosts`を編集する
+    - トピックをやり取りするPCのホスト名とIPアドレスを記述
+
+
 ## 参考
 - [ROS講座29 rosbagを使う](https://qiita.com/srs/items/f6e2c36996e34bcc4d73)
 - [データの記録と再生](http://wiki.ros.org/ja/rosbag/Tutorials/Recording%20and%20playing%20back%20data)

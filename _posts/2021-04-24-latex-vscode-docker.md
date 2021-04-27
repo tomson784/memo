@@ -42,6 +42,12 @@ $makeindex = 'mendex %O -o %D %S';
 $pdf_mode = 3;
 ```
 
+## 注意
+
+- windows側のディレクトリに配置された状態では，dockerによるtexコンパイルがされなかった(そのうち修正されるかも)
+- clean，buildコマンドなどを自動設定にしているとエラーに気が付かない場合があるので，texに詳しくない場合はautoにしないほうがいい
+- エラーが発生してもコンパイルが永遠に終わらない場合があるので，秒数制限などをかける必要がある．
+
 ## 参考
 - [LaTeX Workshop を使いこなす](https://qiita.com/Yarakashi_Kikohshi/items/a9357dd469320ffb65a0)
 - [Docker+VS CodeでLaTeX環境構築 (latexmkrc依存版)](https://laptrinhx.com/docker-vs-codedelatex-huan-jing-gou-zhu-latexmkrc-yi-cun-ban-1015209527/)
