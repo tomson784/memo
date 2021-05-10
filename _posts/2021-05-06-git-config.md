@@ -26,4 +26,4 @@ git config --local user.email "現在の作業リポジトリに用いるメー�
 
 ## 参考
 
-- [複数のgitアカウントを使い分ける]
+- [複数のgitアカウントを使い分ける](https://qiita.com/0084ken/items/f4a8b0fbff135a987fea)
