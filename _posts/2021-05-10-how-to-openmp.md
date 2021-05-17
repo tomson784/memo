@@ -14,6 +14,17 @@ OpenMPはクロスプラットフォームとなっている
 
 Ubuntu18.04のROSインストール済みだと追加で何かをインストール必要はなかった．
 
+## cmakeでビルドする
+
+以下のコマンドを加えればひとまずOK
+
+```CMakeLists.txt
+find_package(OpenMP REQUIRED)
+if(OpenMP_FOUND)
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+endif()
+```
 
 ## 参考
 
