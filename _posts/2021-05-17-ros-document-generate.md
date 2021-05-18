@@ -122,12 +122,14 @@ docker pull tomson784/rosdoc-lite:latest
 ubuntu18をホストとしてdockerを起動したときは以下のコマンドだけでドキュメントの生成ができた．
 
 ```
-docker run --rm -v "$(pwd)/<ros_project_dir_name>:/<ros_project_dir_name>" <rosdoc_lite_image> rosdoc_lite /<ros_project_dir_name>
+docker run --rm -v "$(pwd)/<ros_project_path_on_host>:/<ros_project_path_on_docker>" --workdir="/<ros_project_path_on_docker>" tomson784/rosdoc-lite rosdoc_lite .
 ```
 
-しかし，wsl2のUbunut20.04内でコマンドを実行した場合は，`rosdoc_lite`の処理はうまくいくが肝心のドキュメントがホスト上に生成されていないので，修正する必要がある．
+~~しかし，wsl2のUbunut20.04内でコマンドを実行した場合は，`rosdoc_lite`の処理はうまくいくが肝心のドキュメントがホスト上に生成されていないので，修正する必要がある．~~
 
-wsl2でもdockerでshellを起動し，そこで`rosdoc_lite`を起動すると普通に生成されてホスト上にも共有された．
+~~wsl2でもdockerでshellを起動し，そこで`rosdoc_lite`を起動すると普通に生成されてホスト上にも共有された．~~
+
+wsl2，Ubuntu18の両方で実行できることを確認．
 
 ## 参考
 - [DoxygenでPythonコードを文書化](https://campkougaku.com/2020/02/20/python-doxygen/)
