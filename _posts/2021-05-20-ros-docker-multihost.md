@@ -27,4 +27,5 @@ dockerのshellを起動し，ROS_MASTER_URIとROS_IPを変更する．
 
 - [Docker の bridge と host ネットワークについて勉強する](https://qiita.com/toshihirock/items/f5b9f7799ec8bf8c328e)
 - [docker-composeでホストとコンテナのIPアドレスを同じにする](https://hakengineer.xyz/2018/07/29/post-1475/)
+- [Dockerのマルチホストネットワーク機能を試してみた](https://www.memotansu.jp/docker/875/)
 - [dockerコマンドの詳しい解説](http://docs.docker.jp/v1.10/engine/reference/run.html#linux-lxc)
