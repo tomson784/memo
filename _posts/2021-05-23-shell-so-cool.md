@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "ターミナルをかっこよくするための環境構築"
-date:   2021-05-11
+date:   2021-05-23
 categories: shell
 ---
 
