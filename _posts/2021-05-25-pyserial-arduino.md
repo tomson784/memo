@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "pythonでArduinoとPC間でシリアル通信する"
-date:   2021-05-21
+date:   2021-05-25
 categories: python arduino
 ---
 
@@ -90,6 +90,28 @@ while True:
 
 ser.close()
 ```
+
+## 注意点
+
+### arduino=>pc，pc=>arduinoでデータをやり取りする際の注意点
+
+```py
+ser = serial.Serial('/dev/ttyACM0', 9600) 
+while True:
+    ser.write(123)
+```
+
+ではなく
+
+```py
+ser = serial.Serial('/dev/ttyACM0', 9600) 
+while True:
+    ser.readline()
+    ser.write(123)
+```
+
+とするとうまくいく．  
+arduinoへの書き込みに対して，読込を常に行う必要がある．（バッファの関係？クロックなんちゃらのせい？）
 
 ## 参考
 - [【PySerial】Python×Arduinoで制御してみる1【Lチカ】](https://gangannikki.hatenadiary.jp/entry/2018/11/15/025849)
