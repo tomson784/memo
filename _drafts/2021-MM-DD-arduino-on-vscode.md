@@ -579,3 +579,5 @@ categories: arduino vscode
 - [Arduinoで遊ぶページ](https://garretlab.web.fc2.com/arduino/introduction/vscode/)
 - [vscodeでArduinoを開発する@Ubuntu](https://qiita.com/mugimugi/items/7befd0bf561c96c43772)
 - [VSCodeでArduinoの開発をする方法](https://www.mechatronahibi.com/arduino-vscode-dev/)
+- [VS CodeでArduino開発](https://101010.fun/iot/arduino-vscode.html)
+- [【ESP32】Arduino IDEをVSCODEで動かす。。ちょいはまり。。。pins_arduino.hがないとか。。【M5Stack】](https://tom2rd.sakura.ne.jp/wp/2020/07/29/post-11567/)
