@@ -11,9 +11,10 @@ categories: arduino vscode
 
 - vscode，arduinoのインストール
 - arduino拡張機能のインストール
-- `setting.json`を編集
+- `setting.json`を編集(参考：https://www.mechatronahibi.com/arduino-vscode-dev/#rtoc-6)
 - verifyでコンパイル(右下の board select によりコンパイル環境の選択．それによって`arduino.json`というファイルができる．)
 - コンパイルができる
+- uploadで書き込みが行われる(select serial portでポートの選択)
 
 ## 注意点
 
