@@ -4,7 +4,7 @@
 
 ## Latest posts
 
-{% for post in site.posts limit: 3 %}
+{% for post in site.posts limit: 5 %}
 - [{{ post.title }}]({{ post.url | prepend: site.baseurl }})
 {% endfor %}
 

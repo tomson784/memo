@@ -14,7 +14,8 @@ categories: vscode
   "workbench.colorCustomizations": {
     "titleBar.activeBackground": "#4aa1c4",
     "activityBarBadge.background": "#4aa1c4"
-  }
+  },
+  "files.encoding":"eucjp"  // プロジェクトのファイルエンコーディングの指定
 }
 ```
 
