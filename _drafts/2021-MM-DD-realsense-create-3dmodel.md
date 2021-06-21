@@ -37,3 +37,7 @@ rosrun pcl_ros pointcloud_to_pcd input:=/rtabmap/cloud_map
 
 ## 参考
 - [SLAM with D435i](https://github.com/IntelRealSense/realsense-ros/wiki/SLAM-with-D435i)
+- [3Dデータの修正方法](https://fabble.cc/fablabdazaifu/3dxxxxxxxx)
+- [オブジェクトの3D モデル化](http://www.aerotap.com/DOCS/aeroCAM3DView.Help/aeroCAM3DView.Help/jp/3DModel.htm)
+- [MeshLabでPCDデータをメッシュに変換、書き出し](http://www.pointcloud.jp/blog_n07/)
+- [Virtual Tsukuba Challenge on Unity について](https://www.slideshare.net/UnityTechnologiesJapan002/virtual-tsukuba-challenge-on-unity-238911580)
