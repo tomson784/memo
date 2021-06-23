@@ -2,7 +2,7 @@
 layout: default
 title:  "ROSで点群処理をするときに最低限必要なこと"
 date:   2021-06-24
-categories: 論文 docker tex
+categories: ros 点群 pcl
 ---
 
 # 内容
