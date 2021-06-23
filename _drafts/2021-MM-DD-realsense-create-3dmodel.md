@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Realsenseの点群情報から3Dモデルを作成する"
-date:   2021-05-11
+date:   2021-06-21
 categories: ros realsense 3dmodel
 ---
 
