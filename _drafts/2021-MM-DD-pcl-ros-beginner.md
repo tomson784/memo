@@ -20,5 +20,6 @@ ROSで点群処理を行う際に必要な，データの受信，処理，配�
 
 
 ## 参考
-- [LaTeX Workshop を使いこなす](https://qiita.com/Yarakashi_Kikohshi/items/a9357dd469320ffb65a0)
-- [Docker+VS CodeでLaTeX環境構築 (latexmkrc依存版)](https://laptrinhx.com/docker-vs-codedelatex-huan-jing-gou-zhu-latexmkrc-yi-cun-ban-1015209527/)
+- [PointCloud に対するフィルタ](https://bnd-tc.github.io/ros_mobile_robot_rsj_tutorial/ros_3d_points_filters.html)
+- [【PCL，ROS】ユークリッドクラスタリング（EuclideanClusterExtraction）](https://lilaboc.work/archives/20136695.html)
+- [ROSでPCLのチュートリアルを試せるパッケージ作った](https://robotry.hatenablog.com/entry/2019/12/10/191045)
