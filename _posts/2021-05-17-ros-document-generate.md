@@ -105,6 +105,8 @@ rosdoc_lite <ros-project-path>
 \f$ tex記法 \f$
 ```
 
+ただし，Texのコンパイラが必要
+
 ## `rosdoc_lite`コマンドを手軽に扱う
 
 
@@ -116,6 +118,25 @@ rosdoc_lite(latexコンパイルあり)をdockerで手軽に扱うための`Dock
 ```
 docker pull tomson784/rosdoc-lite:latest
 ```
+
+## ドキュメントにMarkdownファイルを用いる
+
+プロジェクトルートに`rosdoc.yaml`というファイルを配置する．
+
+```yaml
+- builder: doxygen
+  file_patterns: '*.cpp *.hpp *.py *.md'
+  use_mdfile_as_main_page: ./README.md
+```
+
+メインページから別のMarkdownファイルへのリンクを作成する場合  
+ex) `/README.md` →　`/doc_src/test.md`
+
+```
+[表示名](@ref md_doc_src_test)
+```
+
+doxygenのバージョンを変更すればGitHubのマークダウン同様にリンクを作成できるらしい（未検証）．
 
 ### 注意点
 
