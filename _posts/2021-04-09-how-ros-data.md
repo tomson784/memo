@@ -62,6 +62,11 @@ n倍速でrosbagを再生する．
 rosbag play <bagfile.bag> -r <speed> --clock
 ```
 
+特定のtopicのみの指定して再生する．
+```
+rosbag play file.bag --topics <topic_name>
+```
+
 ## rqt_bag
 
 GUIでrosbagデータを開く．特定の時間を指定して観察したいときなど．
