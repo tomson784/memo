@@ -114,3 +114,4 @@ ROS_MASTER=http://<this_pc_ip_address>
 - [ROS講座29 rosbagを使う](https://qiita.com/srs/items/f6e2c36996e34bcc4d73)
 - [データの記録と再生](http://wiki.ros.org/ja/rosbag/Tutorials/Recording%20and%20playing%20back%20data)
 - [ROSのTips（初心者向け）](https://qiita.com/yukkysaito/items/e2f714c254bf7799677e)
+- https://answers.ros.org/question/228676/exclude-some-topics-from-rosbag-play/
