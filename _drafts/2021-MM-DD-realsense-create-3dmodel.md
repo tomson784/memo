@@ -41,3 +41,4 @@ rosrun pcl_ros pointcloud_to_pcd input:=/rtabmap/cloud_map
 - [オブジェクトの3D モデル化](http://www.aerotap.com/DOCS/aeroCAM3DView.Help/aeroCAM3DView.Help/jp/3DModel.htm)
 - [MeshLabでPCDデータをメッシュに変換、書き出し](http://www.pointcloud.jp/blog_n07/)
 - [Virtual Tsukuba Challenge on Unity について](https://www.slideshare.net/UnityTechnologiesJapan002/virtual-tsukuba-challenge-on-unity-238911580)
+- [Reconstruction system](http://www.open3d.org/docs/release/tutorial/reconstruction_system/index.html)

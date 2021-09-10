@@ -1,3 +1,9 @@
+---
+layout: default
+title:  "ROSのビルドについて"
+date:   2021-05-27
+categories: ros cmake
+---
 
 # ROSのコンパイルについて
 
