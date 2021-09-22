@@ -12,6 +12,8 @@ imu_filter_madgwick: `sudo apt-get install ros-kinetic-imu-filter-madgwick`
 rtabmap_ros: `sudo apt-get install ros-kinetic-rtabmap-ros`
 robot_localization: `sudo apt-get install ros-kinetic-robot-localization`
 
+**色々記載したが，[Reconstruction system](http://www.open3d.org/docs/release/tutorial/reconstruction_system/index.html)を用いたものが一番良かった．**
+
 ## rosbagデータの保存
 
 ```bash

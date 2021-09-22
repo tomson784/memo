@@ -18,7 +18,7 @@ categories: arduino vscode
 
 ## 注意点
 
-いつの間にか`.vscode/c_cpp_properties.json`にarduinoの設定が書き込まれており，これを消すとコンパイルができなくなる．  
+いつの間にか`.vscode/c_cpp_properties.json`にarduinoの設定が書き込まれており，これを消すとコンパイルができなくなる(エラーはでるがコンパイル，書き込みはできる)．  
 これを復活させる方法がわからないので，こまめに`c_cpp_properties.json`を確認して，バックアップを取っておいたほうが良い．
 
 ## サンプル
