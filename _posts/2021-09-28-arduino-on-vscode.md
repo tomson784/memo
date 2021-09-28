@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Arduino開発をvscodeで快適にする"
-date:   2021-05-27
+date:   2021-09-28
 categories: arduino vscode
 ---
 
@@ -23,7 +23,7 @@ categories: arduino vscode
 
 ## サンプル
 
-`arduino.json`を以下の設定で行った．
+`arduino.json`を以下の設定で行った．(arduino megaの場合)
 
 ```json
 {
