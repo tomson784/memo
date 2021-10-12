@@ -1,3 +1,10 @@
+---
+layout: default
+title:  "rosbagをプログラム中の任意のタイミングで起動・停止する方法"
+date:   2021-10-12
+categories: ros rosbag shell
+---
+
 # rosbagをプログラム中の任意のタイミングで起動・停止する方法
 
 ROSを使った実験が大規模（センサ数，ネットワーク）であったり，長時間に渡る場合にrosbagをそのまま使用すると，
@@ -11,8 +18,11 @@ ROSを使った実験が大規模（センサ数，ネットワーク）であ�
 
 rosbagの起動
 ```
-rosbag record -a __name:=<record_node_name>
+rosbag record __name:=<record_node_name>
 ```
+
+`<record_node_name>`はrosbagを保存するノードのノード名を決めることができる．
+決めなかった場合は`record_xxxxxxxxxxxxxxxxxx`といったようなノード名となる（xは数字）．
 
 rosbagの停止
 ```
