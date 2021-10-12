@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "rosbagファイルの結合"
-date:   2021-09-22
+date:   2021-10-05
 categories: ros
 ---
 
@@ -18,3 +18,4 @@ rosbagで保存したデータにはタイムスタンプが一緒に保存さ�
 rosbagファイルをマージする際のデータの時系列はこのタイムスタンプに準拠しているので，結合したデータであっても時系列をある程度は保証することができる．
 
 ## 参考
+- https://naoki-sh.github.io/articles/ros/rosbag
