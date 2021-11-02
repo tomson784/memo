@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "rosbagをプログラム中の任意のタイミングで起動・停止する方法"
-date:   2021-10-12
+date:   2021-11-02
 categories: ros rosbag shell
 ---
 
