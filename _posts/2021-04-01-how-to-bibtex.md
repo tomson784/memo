@@ -55,9 +55,19 @@ $pdf_mode = 3;
 \bibliographystyle{jplain} % plain,jplain:アルファベット順．unsrt,junsrt:引用順
 \bibliography{sample}      % sampleはsample.bibを指す
 ```
+
+また，bibtexファイルを複数ファイルに分割して使いたい場合は以下のように記述する
+
+```
+\bibliography{sample_1, sample_2}
+```
+
+`sample_%%`はそれぞれ`sample_1.bib`,`sample_2.bib`となっている．
+
+
 ## 参考
 
 - http://mikilab.doshisha.ac.jp/dia/seminar/latex/doc/bib.html  
 - https://qiita.com/fujino-fpu/items/d92d185da730e25743cb  
 - [BiBTeXとは](https://qiita.com/SUZUKI_Masaya/items/14f9727845e020f8e7e9)
-
+- [Bibliographies from multiple .bib files](https://tex.stackexchange.com/questions/84099/bibliographies-from-multiple-bib-files)
