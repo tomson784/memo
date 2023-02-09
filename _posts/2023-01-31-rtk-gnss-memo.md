@@ -1,12 +1,42 @@
 ---
 layout: default
-title:  "RTK-GNSSのための参考文献"
+title:  "RTK-GNSSで計測する"
 date:   2023-01-31
 categories: rtk gps gnss 
 ---
 
-# RTK-GNSSのための参考文献
+# RTK-GNSSで計測する
 
+## 用意された基準局を用いてRTK-GNSSで計測する
+
+使用した基準局は[善意の基準局掲示板](https://rtk.silentsystem.jp/)から秋田県雄勝郡のものを使用した． \
+（うまくいかない場合に使用する基準局を変更しただけでうまくいったりしたので，うまくいかない場合はそこも疑ってみるとよい）\
+以下のコマンドを実行する．通信できている場合は通信量が表示される
+
+```sh
+./str2str -in ntrip://rtk2go.com:2101/[基準局のMountPoint] -out serial://ttyACM0:230400
+```
+
+## ローカル環境でRTK測位する
+
+基準局．（1Hzで設定しておく）\
+起動すると`waiting`という表示が続く．\
+移動局とtcp通信を確立すると表示が変わる．通信量が表示される．
+
+```sh
+./str2str -in serial://ttyACM0:230400#rtcm3 -out tcpsvr://xxx.xxx.xxx.xxx:2101
+```
+
+移動局．\\
+移動局とtcp通信を確立すると表示が変わる．IPアドレスと通信量が表示される．
+
+```
+./str2str -in tcpcli://xxx.xxx.xxx.xxx#rtcm3 -out serial://ttyACM1:230400
+```
+
+## RTK測位の結果
+
+まだ野外で試していない．
 
 ## 参考
 - [善意の基準局掲示板](https://rtk.silentsystem.jp/)
