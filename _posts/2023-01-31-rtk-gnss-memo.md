@@ -24,21 +24,31 @@ categories: rtk gps gnss
 移動局とtcp通信を確立すると表示が変わる．通信量が表示される．
 
 ```sh
-./str2str -in serial://ttyACM0:230400#rtcm3 -out tcpsvr://xxx.xxx.xxx.xxx:2101
+./str2str -in serial://ttyACM0:230400#rtcm3 -out tcpsvr://xxx.xxx.xxx.xxx:<port>
 ```
 
 移動局．\\
 移動局とtcp通信を確立すると表示が変わる．IPアドレスと通信量が表示される．
 
-```
-./str2str -in tcpcli://xxx.xxx.xxx.xxx#rtcm3 -out serial://ttyACM1:230400
+```sh
+./str2str -in tcpcli://xxx.xxx.xxx.xxx:<port>#rtcm3 -out serial://ttyACM1:230400
 ```
 
 ## RTK測位の結果
 
 まだ野外で試していない．
 
+
+## ROSでTopicとして座標情報を出力する．
+
+```sh
+roslaunch nmea_navsat_driver nmea_serial_driver.launch
+```
+
+まだ野外で試していない．
+
 ## 参考
+
 - [善意の基準局掲示板](https://rtk.silentsystem.jp/)
 - [NTRIP CasterServer の構築](https://qiita.com/yasushi00/items/50d4ad15083e468553d1)
 - [自分用のNTRIP caster をたてる](https://qiita.com/XPT60/items/29d2d3575d3e42462387)
@@ -51,3 +61,4 @@ categories: rtk gps gnss
 - [RTKに必要な基準局を設置してみよう！](https://qiita.com/Ogawa_AITOYA/items/cd3fc1b8bb86700dafe5)
 - [NtripCaster～ネットワーク式RTK-GNSSの補正情報配信サーバー～について](https://qiita.com/m_take/items/f416b62fb6edfb7a8c4d)
 - [Containerised NTRIP Caster](https://github.com/charlesquick/ntripcaster-containerised)
+- [RTK F9P Positioning Solutions](https://drotek.gitbook.io/rtk-f9p-positioning-solutions/)
