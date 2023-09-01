@@ -1,11 +1,15 @@
 ---
 layout: default
 title:  "RTK-GNSSで計測する"
-date:   2023-01-31
+date:   2023-08-22
 categories: rtk gps gnss 
 ---
 
 # RTK-GNSSで計測する
+
+## 使用したgnss
+
+u-bloxのzedf9p
 
 ## 用意された基準局を用いてRTK-GNSSで計測する
 
@@ -27,17 +31,12 @@ categories: rtk gps gnss
 ./str2str -in serial://ttyACM0:230400#rtcm3 -out tcpsvr://xxx.xxx.xxx.xxx:<port>
 ```
 
-移動局．\\
+移動局．\
 移動局とtcp通信を確立すると表示が変わる．IPアドレスと通信量が表示される．
 
 ```sh
 ./str2str -in tcpcli://xxx.xxx.xxx.xxx:<port>#rtcm3 -out serial://ttyACM1:230400
 ```
-
-## RTK測位の結果
-
-まだ野外で試していない．
-
 
 ## ROSでTopicとして座標情報を出力する．
 
@@ -45,7 +44,15 @@ categories: rtk gps gnss
 roslaunch nmea_navsat_driver nmea_serial_driver.launch
 ```
 
-まだ野外で試していない．
+野外で実験を行った結果，プラマイ1~2cm程度の精度で計測することができた．
+
+![rtk-gnss測位の結果](../images/ublox_zedf9p_local_rtk.mp4.png)
+
+## 注意点
+
+基準局が無線LANの場合でWiFiアクセスポイントから遠いとRTK-GNSSがFixモードにならないことがある．
+その間，rtklibのstr2strに表示されるメッセージは正常に通信ができることになっていたが，u-centerでrtk測位を実行してログを確認したところエラーメッセージが発生していた．
+一見正常に見えてうまく動作しない場合は，u-centerでデバッグを行うのがよい．
 
 ## 参考
 
@@ -62,3 +69,4 @@ roslaunch nmea_navsat_driver nmea_serial_driver.launch
 - [NtripCaster～ネットワーク式RTK-GNSSの補正情報配信サーバー～について](https://qiita.com/m_take/items/f416b62fb6edfb7a8c4d)
 - [Containerised NTRIP Caster](https://github.com/charlesquick/ntripcaster-containerised)
 - [RTK F9P Positioning Solutions](https://drotek.gitbook.io/rtk-f9p-positioning-solutions/)
+- [センチメートルGPS測位 F9P RTKキット・マニュアル](https://shop.cqpub.co.jp/detail/2509/)
