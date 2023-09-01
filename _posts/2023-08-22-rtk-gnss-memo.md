@@ -46,7 +46,7 @@ roslaunch nmea_navsat_driver nmea_serial_driver.launch
 
 野外で実験を行った結果，プラマイ1~2cm程度の精度で計測することができた．
 
-![rtk-gnss測位の結果](../images/ublox_zedf9p_local_rtk.mp4.png)
+![rtk-gnss測位の結果]({{site.baseurl}}/images/ublox_zedf9p_local_rtk.mp4.png)
 
 ## 注意点
 
