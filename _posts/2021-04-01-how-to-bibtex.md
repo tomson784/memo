@@ -24,6 +24,9 @@ Bibtexはこんな感じに記述されているファイル↓
 }
 ```
 
+`@種別`の種別の名前により，`{}`内のラベルの表示のされ方が変化するので，引用する資料の種類によって種別を変更して記述する必要がある．
+論文の場合は`@Article{}`，Webページなどの場合は`@Misc{}`などと記述する．
+
 ## texliveなどの場合の例
 
 出力された`****.aux`ファイルに対して以下のコマンドで
@@ -71,3 +74,4 @@ $pdf_mode = 3;
 - https://qiita.com/fujino-fpu/items/d92d185da730e25743cb  
 - [BiBTeXとは](https://qiita.com/SUZUKI_Masaya/items/14f9727845e020f8e7e9)
 - [Bibliographies from multiple .bib files](https://tex.stackexchange.com/questions/84099/bibliographies-from-multiple-bib-files)
+- [BIBTEX の使い方 · 簡易資料](https://blackknight.ics.nara-wu.ac.jp/pub/doc/bibtex.pdf)
