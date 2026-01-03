@@ -1,8 +1,8 @@
 ---
 layout: default
 title:  "Project Chronoの始め方"
-date:   2025-01-02
-categories: 'project chrono' simulator ros 
+date:   2026-01-02
+categories: chrono simulator ros 
 ---
 
 # Project Chrono
