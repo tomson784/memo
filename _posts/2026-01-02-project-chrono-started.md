@@ -10,6 +10,8 @@ categories: chrono simulator ros
 [Project Chrono](https://projectchrono.org/)は、車両・ロボティクス等と土壌・その他流体などの相互作用(テラメカニクス)をシミュレーションすることができるオープンソースソフトウェアです。
 試しに動かしてみました。GPUなしのPCでやりました。
 
+Dockerで動かす場合とローカル環境で動かす2パターンで試しました。
+
 ## Dockerを用いてやる方法(シミュレーション起動のみ)
 
 以下URLのgithubリポジトリを参考にしました。<br>
