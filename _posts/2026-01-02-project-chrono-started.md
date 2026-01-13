@@ -10,7 +10,7 @@ categories: chrono simulator ros
 [Project Chrono](https://projectchrono.org/)は、車両・ロボティクス等と土壌・その他流体などの相互作用(テラメカニクス)をシミュレーションすることができるオープンソースソフトウェアです。
 試しに動かしてみました。GPUなしのPCでやりました。
 
-Dockerで動かす場合とローカル環境で動かす2パターンで試しました。
+「Dockerで動かす場合」と「ローカル環境(Ubuntu24.04、CPUのみ)」と「ローカル環境(WSL2、Ubuntu22.04、NvidiaGPUあり)」で動かす3パターンで試しました。
 
 ## Dockerを用いてやる方法(シミュレーション起動のみ)
 
@@ -105,7 +105,7 @@ ros2 topic pub /hmmwv_1/input/driver_inputs chrono_ros_interfaces/msg/DriverInpu
 
 ![project_chrono_ros]({{site.baseurl}}/images/project-chrono-connection-ros.png)
 
-## 備考
+### 備考
 
 `ccmake`コマンドで`configure`をしたい際に、DEMやSENSORをONにしたましたが、CUDAがありませんなどのメッセージが表示されました。
 DEMなどの計算にはGPUが必須なのかもしれないです。
@@ -175,6 +175,8 @@ Failed to create a ChOptixEngine, with error: OPTIX_ERROR_LIBRARY_NOT_FOUND: Lib
 
 これについてはOptixの実行ファイルがWSL2に対応していないことが原因だと考えられている。
 ここまでやると、フォークリフトなどのデモンストレーションを実行することができた。
+
+### 備考
 
 ## 参考
 
