@@ -133,6 +133,12 @@ DEMなどの計算にはGPUが必須なのかもしれないです。
 DEMを利用するためにcudaをインストールする。
 [このリンク](https://developer.nvidia.com/cuda-downloads)にcudaライブラリのインストール手順があるが、Project Chronoのバージョンによってcudaの対応バージョンが違う。
 cuda-13はライブラリの中身の変更により、一部コンパイルが通らなかった。
+
+
+cmakeをアップデートした方がよい。
+私はcmake version 4.2.1にアップデートをした。
+次のサイトを参考にした（[【cmake】最新版CMakeをapt installする方法【Ubuntu】](https://qiita.com/sunrise_lover/items/810977fede4b979c382b)）。
+
 cuda-12.3をインストールし、それでも一部関数が対応していなかったので、DEMプログラムの一部を以下のスクリプトで書き換えるとコンパイルが進むようになった
 ```
 grep -rl "cuda::std::terminate" src/chrono_dem/cuda   | xargs sed -i 's/cuda::std::terminate()/asm("trap;")/g'
@@ -141,6 +147,13 @@ grep -rl "cuda::std::terminate" src/chrono_dem/cuda   | xargs sed -i 's/cuda::st
 cudaが認識されていない場合は`ccmake`画面で`[t] Toggle advanced mode`を用いると隠れたcmakeの変数が表示されるので、その状態で以下のようにパスを設定する。
 ```
 CMAKE_CUDA_COMPILER              /usr/local/cuda/bin/nvcc
+```
+また、以下のコマンドを実施する。
+```
+echo "export PATH="/usr/local/cuda/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+" >> ~/.bashrc
+apt install cuda-toolkit-12-3
 ```
 
 
