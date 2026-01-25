@@ -191,6 +191,97 @@ Failed to create a ChOptixEngine, with error: OPTIX_ERROR_LIBRARY_NOT_FOUND: Lib
 
 ### 備考
 
+## Docker(+NVIDIA)を用いてやる方法(DEMの実行まで)
+
+ローカルのUbuntu24.04でやろうとすると、Nvidia-driverやcudaのバージョン管理が面倒に感じたので、nvidiaのdockerをカスタムして実施した。
+
+まとめるのが面倒なので、とりあえず殴り書きまで（後ほどインストールしたパッケージのコミットIDも書く）。
+基本的にこれまでの環境構築は実施し、DockerコンテナでDEMを起動するための追加設定を記述していきます。
+
+
+下記、実際に設定したコマンド
+`src`の`#include <irrlicht.h>`を`#include <irrlicht/irrlicht.h>`に変更
+```sh
+grep -Rl '#include <irrlicht.h>' . | xargs sed -i 's|#include <irrlicht.h>|#include <irrlicht/irrlicht.h>|'
+```
+```cpp
+#include "chrono/core/ChRotation.h"   // QuatFromAngleX/Y/Z 等を定義
+#include "chrono/assets/ChVisualSystem.h"
+#ifdef CHRONO_VSG
+    #include "chrono_dem/visualization/ChDemVisualizationVSG.h"
+    #include "chrono_vsg/ChVisualSystemVSG.h"
+    using namespace chrono::vsg3d;
+#endif
+#ifdef CHRONO_IRRLICHT
+    #include "chrono_irrlicht/ChVisualSystemIrrlicht.h"
+    using namespace chrono::irrlicht;
+#endif
+```
+
+ただし、DEMでは`VSG`のみの対応であり、irrlichtで描画が実装されてなかった。
+実際は以下の変更だけでいいはず。
+```cpp
+#include "chrono/core/ChRotation.h"   // QuatFromAngleX/Y/Z 等を定義
+#include "chrono/assets/ChVisualSystem.h"
+#ifdef CHRONO_VSG
+    #include "chrono_dem/visualization/ChDemVisualizationVSG.h"
+    #include "chrono_vsg/ChVisualSystemVSG.h"
+    using namespace chrono::vsg3d;
+#endif
+```
+
+```cpp
+// sampler->maxLod = data->properties.maxNumMipmaps;
+sampler->maxLod = static_cast<float>(data->properties.mipLevels);
+```
+
+VSG(Vulkan)をインストールするために下記をそれぞれmake install
+```
+git clone https://github.com/vsg-dev/VulkanSceneGraph.git
+git clone https://github.com/vsg-dev/vsgXchange.git
+git clone https://github.com/vsg-dev/vsgImGui.git
+```
+
+vsgのもろもろをインストールした後に、chronoをビルドし、描画ありのDEMサンプルを起動したら以下のエラーが発生した。
+```
+FATAL: VulkanSceneGraph not compiled with GLSLang, unable to compile shaders.
+terminate called after throwing an instance of 'vsg::Exception'
+```
+
+Vulkanを起動するにはほかにもいろいろと依存パッケージがあるそう。
+調べてみるとvsgのそれぞれのパッケージのビルド時に以下のワーニングが出ているのが原因らしい。glslcがインストールされていないことが原因らしい。
+```sh
+CMake Warning at CMakeLists.txt:52 (message): glslang not found. ShaderCompile support disabled.
+```
+
+以下のコマンドを実施してインストールした。
+
+```
+apt install -y glslang-dev glslang-tools spirv-tools
+apt install -y wget gnupg lsb-release
+
+wget -qO- https://packages.lunarg.com/lunarg-signing-key-pub.asc \
+ | gpg --dearmor > /usr/share/keyrings/lunarg.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/lunarg.gpg] \
+https://packages.lunarg.com/vulkan/1.3.280 jammy main" \
+> /etc/apt/sources.list.d/lunarg-vulkan.list
+
+apt update
+apt install -y vulkan-sdk
+```
+
+以下のコマンドでインストールを確認
+```sh
+glslc --version
+```
+`glslc`が入っていると確認したら、vsg関連のパッケージをビルド、インストールをやり直す。
+そして、chronoをビルドしなおす。
+
+そうするとdemのサンプルをguiありで実行することができた。
+
+![project_chrono_dem]({{site.baseurl}}/images/demo_DEM_mixer.gif)
+
 ## 参考
 
 - [ccmakeのすすめ](https://alt-native.hatenadiary.org/entry/20121224/1356319986)
